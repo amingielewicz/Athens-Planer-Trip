@@ -17,7 +17,7 @@ jobs:
 
       # 2️⃣ Wgranie plików na FTP
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@4.3.6
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
         with:
           server: ftpupload.net              # Twój host FTP z InfinityFree
           username: ${{ secrets.FTP_USERNAME }}
