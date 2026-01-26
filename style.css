@@ -1,0 +1,555 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+            border-bottom: 3px solid #3498db;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(52, 152, 219, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .logo-text img{
+            width: 100px; /* szerokość */
+            height: auto; /* zachowuje proporcje */
+        }
+
+
+        .header-title {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .header-title h1 {
+            color: #2980b9;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .header-title p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .header-info {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .info-box label {
+            display: block;
+            font-size: 12px;
+            color: #7f8c8d;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .info-box .value {
+            font-size: 18px;
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        .weather-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .weather-icon {
+            font-size: 32px;
+        }
+
+        .weather-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .weather-info label {
+            font-size: 11px;
+            color: #7f8c8d;
+            font-weight: 600;
+        }
+
+        .weather-info .temp {
+            font-size: 18px;
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .nav-btn {
+            padding: 12px 20px;
+            border: 2px solid #3498db;
+            background: white;
+            color: #3498db;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #ecf0f1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+        }
+
+        .nav-btn.active {
+            background: #3498db;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            color: #2980b9;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #34495e;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        thead {
+            background: #ecf0f1;
+            color: #2980b9;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #bdc3c7;
+            font-size: 14px;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0 10px 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .cost-highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+            margin: 15px 0;
+        }
+
+        .cost-highlight strong {
+            color: #d68910;
+        }
+
+        .tips-box {
+            background: #d5f4e6;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+            margin: 15px 0;
+        }
+
+        /* Lista w tips-box */
+        .tips-box ul {
+            padding-left: 35px;  /* wcięcie od lewej, żeby nie dotykało ramki */
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Elementy listy */
+        .tips-box li {
+            margin-bottom: 8px;  /* odstęp między punktami */
+        }
+
+        /* Linki w li */
+        .tips-box li a {
+            color: #d35400;           /* kolor odróżniający linki */
+            text-decoration: none;     /* bez podkreślenia */
+        }
+
+        .tips-box li a:hover {
+            text-decoration: underline; /* delikatny efekt hover */
+        }
+
+        /* Akapit w tips-box */
+        .tips-box p {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .warning-box {
+            background: #fadbd8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+            margin: 15px 0;
+        }
+
+        .transport-option {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        .transport-option h4 {
+            color: #2980b9;
+            margin-bottom: 8px;
+        }
+
+        .accommodation-card {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #3498db;
+            margin: 15px 0;
+        }
+
+        .accommodation-card h4 {
+            color: #2980b9;
+            margin-bottom: 10px;
+        }
+
+        /* Kontener mapy - wyśrodkowany w karcie */
+        #map-container {
+            width: 100%;
+            max-width: 600px;    /* mapa nie rozciąga się za bardzo */
+            height: 400px;
+            margin: 20px auto 0; /* mapa wyśrodkowana w pełnej karcie */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: block;
+        }
+
+        /* iframe mapy */
+        #map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .checklist-item {
+            padding: 12px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .packing-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .packing-item ul {
+            padding-left: 25px;    /* wcięcie wypunktowania w prawo */
+            margin-top: 8px;
+            margin-bottom: 0;
+            list-style-type: disc; /* klasyczne kropki */
+        }
+
+        .packing-item li {
+            margin-bottom: 6px;   /* odstęp między punktami listy */
+            line-height: 1.5;     /* lepsza czytelność */
+        }
+
+        .packing-item {
+            background: #f0f8ff;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .emergency-contact {
+            background: #fadbd8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .emergency-contact strong {
+            color: #c0392b;
+            font-size: 16px;
+        }
+
+        .emergency-contact p {
+            margin: 5px 0;
+            color: #2c3e50;
+        }
+
+        .footer {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 4px;
+            border-radius: 4px;
+            color: #d68910;
+            font-weight: 600;
+        }
+
+        /* Kontener checklisty */
+        .last-checklist {
+            background: #f0f8ff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            margin-top: 10px;
+        }
+
+        /* Lista w checklist */
+        .last-checklist ul {
+            padding-left: 30px;  /* wcięcie punktów w prawo */
+            margin: 0;
+            list-style-type: none; /* usuwa klasyczne kropki */
+        }
+
+        /* Elementy listy z checkboxem */
+        .last-checklist li {
+            position: relative;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            padding-left: 25px; /* dodatkowe miejsce na ikonę/checkbox */
+        }
+
+        /* Dodanie ikony checkbox przed tekstem */
+        .last-checklist li::before {
+            content: "☐";         /* checkbox */
+            position: absolute;
+            left: 0;               /* na początku wcięcia */
+            color: #3498db;        /* kolor niebieski pasujący do border */
+            font-weight: bold;
+        }
+
+
+        /* odstępy dla ikon Font Awesome */
+        .fa-solid {
+        margin-right: 6px;
+        margin-left: 4px;
+        vertical-align: middle;
+        }
+
+        /* ikona na początku nagłówka */
+        h3 .fa-solid,
+        h4 .fa-solid {
+        margin-left: 0;
+        margin-right: 8px;
+        }
+
+        /* ikona przed linkiem */
+        p .fa-solid + a {
+        margin-left: 4px;
+        }
+
+        /* poprawa czytelności paragrafów */
+        p {
+        line-height: 1.6;
+        }
+
+        .airline-logo {
+        width: 35px;        /* rozmiar ikony */
+        height: auto;
+        margin-right: 10px;  /* odstęp od tekstu */
+        vertical-align: middle;
+        }
+
+        .airbnb-logo {
+        width: 80px;
+        height: auto;
+        vertical-align: middle;
+        margin-right: 8px;
+        }
+
+        .airbnb-link {
+            color: #FF5A5F;       /* charakterystyczny kolor Airbnb */
+            text-decoration: none; /* usuwa podkreślenie */
+            font-weight: bold;
+        }
+
+        .airbnb-link:hover {
+            text-decoration: underline; /* delikatny efekt hover */
+        }
+
+
+       
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-info {
+                width: 100%;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-btn {
+                width: 100%;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
