@@ -12,17 +12,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 🔹 DEBUG: sprawdzamy, czy secret istnieje
-      - name: Debug FTP_USERNAME
+      # 🔹 DEBUG: sprawdzamy oba secrets
+      - name: Check FTP secrets
         run: |
           if [ -z "$FTP_USERNAME" ]; then
             echo "FTP_USERNAME is NOT set!"
             exit 1
-          else
-            echo "FTP_USERNAME is set!"
           fi
+          if [ -z "$FTP_PASSWORD" ]; then
+            echo "FTP_PASSWORD is NOT set!"
+            exit 1
+          fi
+          echo "Both FTP secrets are set!"
         env:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
