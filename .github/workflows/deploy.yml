@@ -2,21 +2,26 @@ name: Deploy to InfinityFree
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main   # Branch, który chcesz publikować
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      # 1. Pobranie repo
+      - name: Checkout repo
         uses: actions/checkout@v3
 
+      # 2. Wgranie na FTP
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+
         with:
-          server: ftpupload.net
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: /htdocs/
+          server: ftpupload.net                 # Twój FTP host
+          username: ${{ secrets.FTP_USERNAME }}  # Secret z GitHub
+          password: ${{ secrets.FTP_PASSWORD }}  # Secret z GitHub
+          local-dir: ./                           # Katalog z plikami do wysłania
+          server-dir: /htdocs/                      # Katalog na serwerze
+          port: 21
+          protocol: ftp
