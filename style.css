@@ -23,8 +23,8 @@
         }
 
         .logo-container {
-            width: 72px;
-            height: 72px;
+            width: 100px;
+            height: 100px;
             background: linear-gradient(135deg, #3498db, #2980b9);
             border-radius: 50%;
             display: flex;
