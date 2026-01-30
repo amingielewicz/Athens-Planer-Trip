@@ -32,13 +32,15 @@
             justify-content: center;
             flex-shrink: 0;
             box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            overflow: hidden;
         }
 
-        .logo-text img{
-            width: 100px; /* szerokość */
-            height: auto; /* zachowuje proporcje */
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
-
 
         .header-title {
             flex: 1;
